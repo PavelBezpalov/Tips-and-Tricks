@@ -1,0 +1,13 @@
+Branches in console prompt
+Save as somename.sh and execute
+#!/bin/bash
+echo 'GIT_PS1_SHOWDIRTYSTATE=1' >> ~/.bashrc
+echo 'GIT_PS1_SHOWSTASHSTATE=1' >> ~/.bashrc
+echo 'GIT_PS1_SHOWUNTRACKEDFILES=1' >> ~/.bashrc
+echo 'GIT_PS1_SHOWUPSTREAM="auto"' >> ~/.bashrc
+echo 'GIT_PS1_SHOWCOLORHINTS=1' >> ~/.bashrc
+wget https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh
+cat git-prompt.sh >> ~/.bashrc
+rm git-prompt.sh
+echo "PROMPT_COMMAND='__git_ps1 \"\u@\h:\w\" \"\\\\\\$ \"'" >> ~/.bashrc
+

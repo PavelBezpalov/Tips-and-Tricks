@@ -3,3 +3,9 @@ Synapse - 'Spotlight' analog for Ubuntu
 $ sudo add-apt-repository ppa:synapse-core/ppa
 $ sudo apt-get update
 $ sudo apt-get install synapse
+
+
+Dual monitor right-handed
+# first command to find monitors, second to set
+$ xrandr --prop | grep "[^dis]connected" | cut --delimiter=" " -f1
+$ xrandr --output CRT1 --left-of DFP1 --primary --output DFP1 --auto
