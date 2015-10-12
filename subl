@@ -1,0 +1,86 @@
+source: http://zhuravel.biz/setting-up-sublime-text-for-ruby-development
+and: https://mattbrictson.com/sublime-text-3-recommendations
+
+Install Package Control
+https://packagecontrol.io/installation#ST3
+
+
+How to install packages:
+1 Press Command-Shift-P (Mac OS X) or Ctrl-Shift-P
+(Windows) to open the Command Palette.
+2 Start typing 'Install' until you
+see the appropriate command 'Package Control: Install Package'.
+3 Hit enter. Wait for loading list of packages.
+4 Enter package name and install.
+
+
+
+PACKAGES:
+Soda theme
+http://buymeasoda.github.io/soda-theme/
+
+
+RailsCasts Theme
+https://github.com/tdm00/sublime-theme-railscasts
+
+
+All Autocomplete.
+Sublime ships with autocomplete behavior, but it is limited
+to completing strings that exist in the current editor. With All Autocomplete
+installed, all open files are searched for autocompletion candidates.
+
+
+Emmet.
+I write my Rails views with ERB-flavored HTML, so Emmet is an incredible
+time-saver. The headline feature is that it makes writing complex nested markup
+super easy, but it has expansions and auto-completion for writing CSS/SCSS as
+well. There’s too much to explain in detail here, so be sure to check out the
+Emmet docs.
+
+
+GitGutter.
+Shows what lines I’ve changed, added, or removed in comparison to
+the local git repository. GitGutter is a no-brainer if you use git.
+
+
+SublimeLinter.
+This one is actually three separate packages: SublimeLinter,
+SublimeLinter-Ruby, and SublimeLinter-rubocop. With these installed, Sublime
+lints my Ruby code as I type! If I’m not satisfied with the default rules, I
+can tweak style enforcement using ~.rubocop.yml. Check out the Rubocop
+documentation for details.
+
+
+
+SETTINGS:
+{
+  "auto_complete": true,
+  "auto_complete_commit_on_tab": true,
+  "copy_with_empty_selection": true,
+  "ensure_newline_at_eof_on_save": true,
+  "index_files": true,
+  "rulers":
+  [
+    79
+  ],
+  "tab_size": 2,
+  "translate_tabs_to_spaces": true,
+  "trim_trailing_white_space_on_save": true,
+}
+
+Ruby-specific word selection behavior.
+When you double-click a word, or use any other word-related text selection
+commands, Sublime tries to be smart about where words begin and end. By
+default, it assumes punctuation is not part of the word. But in Ruby,
+punctuation can be part of method names: e.g. empty? and chomp!, among many
+others.
+
+To tell Sublime to include those trailing ? and ! characters in word
+selections, add the following property to the Ruby syntax-specific settings.
+This has a side-effect of improving the Dash ⌃ ctrlh behavior as well!
+
+{   "word_separators": "./\\()\"'-:,.;<>~@#$%^&*|+=[]{}`~" }
+
+(To get to the Ruby settings, open a Ruby file in the editor and then navigate
+the menus to Sublime Text → Preferences → Settings – More → Syntax Specific –
+User.)
