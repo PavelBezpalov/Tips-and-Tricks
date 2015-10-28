@@ -63,7 +63,7 @@ sudo apt-get autoclean
 The first step is to install some dependencies for Ruby.
 
 sudo apt-get update
-sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev
+sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev libgmp-dev
 
 
 The installation for rvm is pretty simple:
@@ -122,8 +122,6 @@ And now, without further adieu:
 
 gem install rails -v 4.2.4
 
-If you're using rbenv, you'll need to run the following command to make the rails executable available:
-
 rails -v
 # Rails 4.2.4
 
@@ -134,6 +132,8 @@ Setting Up PostgreSQL
 For PostgreSQL, we're going to add a new repository to easily install a recent version of Postgres 9.3.
 
 sudo apt-get install postgresql-9.4
+or
+sudo apt-get install postgresql-9.3
 
 The postgres installation doesn't setup a user for you, so you'll need to follow these steps to create a user with permission to create databases. Feel free to replace chris with your username.
 
